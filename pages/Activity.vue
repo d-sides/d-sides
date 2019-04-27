@@ -1,59 +1,92 @@
-<template>
-  <v-layout align-center>
-    <v-item-group v-model="window" class="shrink mr-4" mandatory tag="v-flex">
-      <v-item v-for="n in length" :key="n">
-        <div slot-scope="{ active, toggle }">
-          <v-btn :input-value="active" icon @click="toggle">
-            <v-icon>mdi-record</v-icon>
-          </v-btn>
-        </div>
-      </v-item>
-    </v-item-group>
+<template lang = "HTML">
+  <v-timeline>
+    <v-timeline-item color="purple lighten-2" fill-dot right>
+      <v-card>
+        <v-card-title class="purple lighten-2">
+          <v-icon dark size="42" class="mr-3">mdi-magnify</v-icon>
+          <h2 class="display-1 white--text font-weight-light">Title 1</h2>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex
+              xs10
+            >Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.</v-flex>
+            <v-flex xs2>
+              <v-icon size="64">mdi-calendar-text</v-icon>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
 
-    <v-flex>
-      <v-window v-model="window" class="elevation-1" vertical>
-        <v-window-item v-for="n in length" :key="n">
-          <v-card flat>
-            <v-card-text>
-              <v-layout align-center mb-3>
-                <v-avatar color="grey" class="mr-3"></v-avatar>
-                <strong class="title">Title {{ n }}</strong>
-                <v-spacer></v-spacer>
-                <v-btn icon>
-                  <v-icon>mdi-account</v-icon>
-                </v-btn>
-              </v-layout>
+    <v-timeline-item color="amber lighten-1" fill-dot left small>
+      <v-card>
+        <v-card-title class="amber lighten-1 justify-end">
+          <h2 class="display-1 mr-3 white--text font-weight-light">Title 2</h2>
+          <v-icon dark size="42">mdi-home-outline</v-icon>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex
+              xs8
+            >Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.</v-flex>
+            <v-flex xs4>Lorem ipsum dolor sit amet, no nam oblique veritus.</v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
 
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/CGK6cJIj434"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </p>
+    <v-timeline-item color="cyan lighten-1" fill-dot right>
+      <v-card>
+        <v-card-title class="cyan lighten-1">
+          <v-icon class="mr-3" dark size="42">mdi-email-outline</v-icon>
+          <h2 class="display-1 white--text font-weight-light">Title 3</h2>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex
+              v-for="n in 3"
+              :key="n"
+              xs4
+            >Lorem ipsum dolor sit amet, no nam oblique veritus no nam oblique.</v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <v-timeline-item color="red lighten-1" fill-dot left small>
+      <v-card>
+        <v-card-title class="red lighten-1 justify-end">
+          <h2 class="display-1 mr-3 white--text font-weight-light">Title 4</h2>
+          <v-icon dark size="42">mdi-account-multiple-outline</v-icon>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex xs2>
+              <v-icon size="64">mdi-server-network</v-icon>
+            </v-flex>
+            <v-flex
+              xs10
+            >Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus.</v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </v-card-text>
-          </v-card>
-        </v-window-item>
-      </v-window>
-    </v-flex>
-  </v-layout>
+    <v-timeline-item color="green lighten-1" fill-dot right>
+      <v-card>
+        <v-card-title class="green lighten-1">
+          <v-icon class="mr-3" dark size="42">mdi-phone-in-talk</v-icon>
+          <h2 class="display-1 white--text font-weight-light">Title 5</h2>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex>Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.</v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
+  </v-timeline>
 </template>
-
-
-
-<script>
-export default {
-  data: () => ({
-    length: 3,
-    window: 0
-  })
-};
-</script>
+<template>
+  

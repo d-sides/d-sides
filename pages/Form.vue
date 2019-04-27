@@ -1,4 +1,4 @@
-<template>
+<template lang = "HTML">
   <form>
     <v-text-field
       v-model="name"
